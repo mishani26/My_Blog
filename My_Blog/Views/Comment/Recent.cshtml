@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+
+@model My_Blog.Models.ArticleModel
+<div class="posts-wrap color">
+    <h3>Recent Comments</h3>
+    <ul>
+        
+      @{int i=0;  
+        foreach (string item in Model.Comments)
+        {
+          i++;
+          if(i<=3)
+          {    
+            <li>
+                <p class="date">@DateTime.Now.Date.ToString("D") <span>@DateTime.Now.ToString("hh:mm")</span></p>
+                <p class="post">
+                    <a href="#">@item</a>
+                </p>
+            </li>
+      }
+      else
+      {break;}
+        }
+      }
+    </ul>
+</div>
+

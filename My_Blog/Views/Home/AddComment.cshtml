@@ -1,0 +1,16 @@
+﻿@{
+    Layout = null;
+}
+@model My_Blog.Models.ArticleModel
+<div class="add-comment">
+    @Html.ValidationSummary()
+    <form action="@Url.Action("Index", "Home")" method="post">
+        @Html.ValidationMessageFor(m => m.NewComment.Comment)
+        @Html.TextAreaFor(m => m.NewComment.Comment, new { placeholder = "Your comment", @class = "txt-area" })
+        <div class="wrap-btn">
+            <button class="btn-cancel">Ente like admin</button>
+            <button class="btn-save">Save changes</button>
+            <p>Lorem ipsum dolor sit amet, <a href="#">adipiscing</a></p>
+        </div>
+    </form>
+</div>
